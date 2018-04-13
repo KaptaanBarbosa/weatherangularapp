@@ -17,7 +17,22 @@ app.factory('getWeather', function($q,$http){
               })
 
               return deferObj.promise;
-        }  
+        },
+        
+        tConvert:function  (timeString) {
+            var H = +timeString.substr(0, 2);
+            var h = (H % 12) || 12;
+            var ampm = H < 12 ? "AM" : "PM";
+            timeString = h + timeString.substr(2, 3) + ampm;
+            return timeString;
+          },
+          convertKelvinToCelsius: function (kelvin) {
+            if (kelvin < (0)) {
+              return 'below absolute zero (0 K)';
+            } else {
+              return parseFloat((kelvin-273.15)).toFixed(2).toString()+" C";
+            }
+          }  
     }               
 });
 
