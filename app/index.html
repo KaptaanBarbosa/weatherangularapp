@@ -1,0 +1,36 @@
+<!doctype html>
+<html class="no-js" lang="en" ng-app="myApp">
+
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title ng-bind="(title || 'Home') + ' :: Angular Weather App'">Angular Weather App</title>
+    <!-- <link rel="stylesheet" href="./vendor/foundation-sites/dist/foundation.min.css "> -->
+    
+    <link rel="stylesheet" href="/app/css/main.css">
+    </head>
+<body>
+    <!-- Header menu -->
+    <ng-include src=" 'templates/menu.html' "></ng-include>
+    <!-- Main body -->
+    <h1>24 hours weather forecast</h1>
+    <div class="wrapper ">
+        <div class="row ">
+            <ui-view></ui-view>
+        </div>
+        <!-- Footer under wrapper -->
+        <ng-include src=" 'templates/footer.html' "></ng-include>
+    </div>
+    <!-- Angular imports -->
+    <script src="vendor/jquery/dist/jquery.min.js "></script>
+    <script src="vendor/angular/angular.js "></script>
+    <script src="vendor/angular-ui-router/release/angular-ui-router.min.js "></script>
+    <script src="vendor/angular-ui-router-title/angular-ui-router-title.js "></script>
+    <script src="vendor/ngMeta/dist/ngMeta.min.js "></script>
+    <!-- Setting 'Foundations' -->
+        <script src="build/myapp.js "></script>
+</body>
+
+</html>

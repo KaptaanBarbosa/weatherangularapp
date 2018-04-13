@@ -1,0 +1,86 @@
+<div class="topnav">
+
+    <div class="search-container">
+      <form>
+        <input type="text" placeholder="Search.." name="search" ng-model="city">
+        <button ng-click="searchCity(this)">Submit</button>
+      </form>
+    </div>
+  </div>
+<table class="zui-table">
+    <thead>
+        <tr>
+            <th class="City"> <a href="">City</a>
+            </th>
+            <th ng-repeat = "rowObj in rowShowList" class="name"> <a href=""> {{rowObj.dt_txt}} </a>
+            </th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="test in tableShowList">
+            <td>{{cityList[$index]}}</td>
+
+            <td ng-repeat = "rowObj in test">{{rowObj.main.temp}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<style>
+    .topnav .search-container {
+    float: right;
+    overflow-x: scroll;
+  }
+  .topnav  {
+    width:560px;
+    padding: 1px 3px 5px 2px;
+
+  }
+  
+  .topnav input[type=text] {
+    margin-top: 8px;
+    font-size: 17px;
+    border: 0.5px solid grey;
+    border-radius: 5px;
+    
+  }
+  
+  .topnav .search-container button {
+    float: right;
+    padding: 3px 3px 3px 3px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+
+  }
+  
+  .topnav .search-container button:hover {
+    background: #ccc;
+  }
+
+  .zui-table {
+    border: solid 1px #DDEEEE;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: normal 13px Arial, sans-serif;
+}
+.zui-table thead th {
+    background-color: #DDEFEF;
+    border: solid 1px #DDEEEE;
+    color: #336B6B;
+    padding: 10px;
+    text-align: left;
+    text-shadow: 1px 1px 1px #fff;
+}
+.zui-table tbody td {
+    border: solid 1px #DDEEEE;
+    color: #333;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #fff;
+}
+    </style>
